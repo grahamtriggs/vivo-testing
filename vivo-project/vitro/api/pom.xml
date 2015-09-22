@@ -81,11 +81,6 @@
             <classifier>jdk15</classifier>
         </dependency>
         <dependency>
-            <groupId>net.sf.jtidy</groupId>
-            <artifactId>jtidy</artifactId>
-            <version>r938</version>
-        </dependency>
-        <dependency>
             <groupId>net.sf.saxon</groupId>
             <artifactId>Saxon-HE</artifactId>
             <version>9.6.0-7</version>
@@ -134,6 +129,11 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>2.3.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>jtidy</artifactId>
+            <version>r8-20060801</version>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>
