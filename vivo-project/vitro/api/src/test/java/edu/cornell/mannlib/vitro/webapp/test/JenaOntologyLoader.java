@@ -57,12 +57,12 @@ public class JenaOntologyLoader {
         return ontModel;                
     }
     
-    static String systemOnts[] ={    
-        "/testontologies/vitro1.owl",
-        "/testontologies/vivo-users.owl" };
+    static String systemOnts[] ={
+            "/src/test/resources/testontologies/vitro1.owl",
+            "/src/test/resources/testontologies/vivo-users.owl"};
     
     static String testOnt[] ={
-        "/testontologies/smallVivo-20070809.owl" };
+            "/src/test/resources/testontologies/smallVivo-20070809.owl"};
     
     static OntModelSpec ONT_MODEL_SPEC = OntModelSpec.OWL_DL_MEM; // no additional entailment reasoning
 
