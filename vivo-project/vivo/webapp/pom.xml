@@ -8,7 +8,7 @@
     <groupId>org.duraspace.vivo</groupId>
     <artifactId>vivo-webapp</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
 
     <parent>
         <groupId>org.duraspace.vivo</groupId>
@@ -19,7 +19,52 @@
 
     <name>VIVO Web App</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <build>
+        <!-- filters>
+            <filter>${filters.file}</filter>
+        </filters -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archiveClasses>false</archiveClasses>
+                    <webResources>
+                        <resource>
+                            <filtering>true</filtering>
+                            <directory>
+                                ${basedir}/src/main/webapp
+                            </directory>
+                            <includes>
+                                <include>WEB-INF/web.xml</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                    <overlays>
+                        <overlay />
+                        <overlay>
+                            <groupId>org.duraspace.vivo</groupId>
+                            <artifactId>vitro-webapp</artifactId>
+                            <type>war</type>
+                        </overlay>
+                    </overlays>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.duraspace.vivo</groupId>
+            <artifactId>vitro-webapp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
 </project>
