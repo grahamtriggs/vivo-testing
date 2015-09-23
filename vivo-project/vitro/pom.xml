@@ -20,6 +20,7 @@
     <name>Vitro</name>
 
     <modules>
+        <module>dependencies</module>
         <module>api</module>
         <module>webapp</module>
     </modules>
